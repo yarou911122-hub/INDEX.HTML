@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>學生成績表格</title>
+  <style>
+    body { font-family: 'Microsoft JhengHei', sans-serif; padding: 30px; }
+    input { padding: 8px; margin-bottom: 15px; }
+    table { border-collapse: collapse; width: 100%; max-width: 650px; }
+    th, td { border: 1px solid #ccc; padding: 12px; text-align: left; }
+    th { background: #234a7c; color: white; }
+    tbody tr:nth-child(even) { background: #f0f4f9; }
+  </style>
+</head>
+<body>
+  <h1>學生成績表格</h1>
+  <input id="search" type="text" placeholder="輸入姓名搜尋">
+  <table>
+    <thead><tr><th>姓名</th><th>科系</th><th>成績</th></tr></thead>
+    <tbody id="students">
+      <tr><td>小明</td><td>資訊工程</td><td>85</td></tr>
+      <tr><td>小美</td><td>資訊管理</td><td>92</td></tr>
+      <tr><td>小華</td><td>電子工程</td><td>78</td></tr>
+    </tbody>
+  </table>
+  <script>
+    document.querySelector('#search').addEventListener('input', function () {
+      const keyword = this.value.trim();
+      document.querySelectorAll('#students tr').forEach(row => {
+        const name = row.cells[0].textContent;
+        row.hidden = !name.includes(keyword);
+      });
+    });
+  </script>
+</body>
+</html>

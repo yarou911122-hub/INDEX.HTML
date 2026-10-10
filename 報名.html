@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>社團報名表單</title>
+  <style>
+    body { font-family: "Microsoft JhengHei", sans-serif; background: #f3f6fb; }
+    form { background: white; max-width: 360px; margin: 70px auto;
+           padding: 28px; border-radius: 12px; }
+    input, select, button { width: 100%; padding: 10px; margin: 8px 0 16px;
+                            box-sizing: border-box; }
+    button { background: #173d78; color: white; border: 0; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <form id="signup">
+    <h2>社團報名</h2>
+    <label for="name">姓名</label>
+    <input id="name" required>
+    <label for="club">選擇社團</label>
+    <select id="club">
+      <option>攝影社</option>
+      <option>熱舞社</option>
+      <option>吉他社</option>
+    </select>
+    <button type="submit">送出報名</button>
+    <p id="result" role="status"></p>
+  </form>
+  <script>
+    document.querySelector('#signup').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.querySelector('#name').value;
+      const club = document.querySelector('#club').value;
+      document.querySelector('#result').textContent = name + '，已選擇：' + club;
+    });
+  </script>
+</body>
+</html>

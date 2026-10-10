@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>多媒體展示</title>
+  <style>
+    body { font-family: "Microsoft JhengHei", sans-serif; margin: 30px; background: #f5f7fb; }
+    h1 { color: #17366a; }
+    .gallery { display: flex; gap: 20px; flex-wrap: wrap; }
+    .card { background: white; padding: 16px; border-radius: 12px; width: 280px; box-shadow: 0 3px 12px #0001; }
+    img, video { width: 100%; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <h1>我的多媒體展示頁</h1>
+  <div class="gallery">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=600" alt="自然風景">
+      <h2>自然風景</h2>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?w=600" alt="戶外景色">
+      <h2>戶外景色</h2>
+    </div>
+    <div class="card">
+      <video controls poster="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm">
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm">
+        你的瀏覽器不支援影片播放。
+      </video>
+      <h2>影片展示</h2>
+    </div>
+  </div>
+</body>
+</html>
